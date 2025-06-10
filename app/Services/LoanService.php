@@ -6,6 +6,7 @@ use App\Repositories\LoanRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
+
 class LoanService
 {
     protected $loanRepo;
