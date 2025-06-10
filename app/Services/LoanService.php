@@ -42,8 +42,8 @@ class LoanService
 
         foreach ($loans as $loan) {
             $emi = round($loan->loan_amount / $loan->num_of_payment, 2);
-            $start = Carbon::parse($loan->first_payment_date);
-            $end = Carbon::parse($loan->last_payment_date);
+            $start = Carbon::parse($loan->first_payment_date)->startOfMonth();
+            $end = Carbon::parse($loan->last_payment_date)->startOfMonth();
             $range = CarbonPeriod::create($start, '1 month', $end);
 
             $emiMonths = [];
